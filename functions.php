@@ -7,8 +7,15 @@
 if(!defined( 'FRESHERSZONE_DIR_PATH' )){
     define( 'FRESHERSZONE_DIR_PATH', untrailingslashit( get_template_directory() ) );
 }
+if(!defined( 'FRESHERSZONE_DIR_URI' )){
+    define( 'FRESHERSZONE_DIR_URI', untrailingslashit( get_template_directory_uri() ) );
+}
 require_once FRESHERSZONE_DIR_PATH. '/inc/helpers/autoloader.php';
 
+function fresherszone_get_theme_instance() {
+	\FRESHERSZONE_THEME\Inc\FRESHERSZONE_THEME::get_instance();
+}
+fresherszone_get_theme_instance();
 function fz_enqueue_scripts()
 {
     wp_enqueue_style('custom-stylesheet', get_template_directory_uri() . '/style.css', array(), '1.0.0', 'all');

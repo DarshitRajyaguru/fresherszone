@@ -2,10 +2,10 @@
 /**
  * Autoloader file for theme.
  *
- * @package fresherszone
+ * @package Aquila
  */
 
-namespace FRESHERSZONE\Inc\Helpers;
+namespace FRESHERSZONE_THEME\Inc\Helpers;
 
 /**
  * Auto loader function.
@@ -16,7 +16,7 @@ namespace FRESHERSZONE\Inc\Helpers;
  */
 function autoloader( $resource = '' ) {
 	$resource_path  = false;
-	$namespace_root = 'FRESHERSZONE\\';
+	$namespace_root = 'FRESHERSZONE_THEME\\';
 	$resource       = trim( $resource, '\\' );
 
 	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
@@ -84,4 +84,4 @@ function autoloader( $resource = '' ) {
 
 }
 
-spl_autoload_register( '\FRESHERSZONE\Inc\Helpers\autoloader' );
+spl_autoload_register( '\FRESHERSZONE_THEME\Inc\Helpers\autoloader' );
