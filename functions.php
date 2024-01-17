@@ -4,6 +4,10 @@
  * 
  * @package fresherszone
  */
+if(!defined( 'FRESHERSZONE_DIR_PATH' )){
+    define( 'FRESHERSZONE_DIR_PATH', untrailingslashit( get_template_directory() ) );
+}
+require_once FRESHERSZONE_DIR_PATH. '/inc/helpers/autoloader.php';
 
 function fz_enqueue_scripts()
 {
