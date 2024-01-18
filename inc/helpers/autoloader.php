@@ -2,7 +2,7 @@
 /**
  * Autoloader file for theme.
  *
- * @package Aquila
+ * @package fresherszone
  */
 
 namespace FRESHERSZONE_THEME\Inc\Helpers;
