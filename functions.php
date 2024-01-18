@@ -13,7 +13,7 @@ if(!defined( 'FRESHERSZONE_DIR_URI' )){
 require_once FRESHERSZONE_DIR_PATH. '/inc/helpers/autoloader.php';
 
 function fresherszone_get_theme_instance() {
-	\FRESHERSZONE_THEME\Inc\FRESHERSZONE_THEME::get_instance();
+	// \FRESHERSZONE_THEME\Inc\FRESHERSZONE_THEME::get_instance();
 }
 fresherszone_get_theme_instance();
 function fz_enqueue_scripts()
