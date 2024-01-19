@@ -40,4 +40,22 @@ class FRESHERSZONE_THEME {
 
 	}
 
+	public function setup_theme(){
+		/**
+		 * Get the Site title
+		 */
+		add_theme_support( 'title-tag' );
+
+		/**
+		 * Add custom logo for the site
+		 */
+		add_theme_support( 'custom-logo' , array(
+			'header-text'	=> array('site-tile', 'site-description'),
+			'height'		=> '480',
+			'width'			=> '720',
+			'flex-height'	=> true,
+			'flex-width'	=> true
+		));
+	}
+
 	
