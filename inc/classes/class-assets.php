@@ -13,6 +13,8 @@
 
     protected function __construct(){
         Assets::get_instance();
+		Menus::get_instance();
+		
         $this->setup_hooks();
     }
     protected function setup_hook(){
