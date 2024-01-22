@@ -91,5 +91,10 @@ function setup_theme(){
     if( ! isset( $content_width ) ){
         $content_width = 1240;
     }
+
+    register_nav_menus([
+        'fresherszone-header-menu' => esc_html__('Header Menu', 'fresherszone'),
+        'fresherszone-footer-menu' => esc_html__('Footer Menu', 'fresherszone')
+    ]);
 }
 add_action('after_setup_theme', 'setup_theme');

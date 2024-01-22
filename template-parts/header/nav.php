@@ -49,3 +49,10 @@
         </div>
     </div>
 </nav>
+
+<?php
+    wp_nav_menu([
+        'theme_location'    => 'fresherszone-header-menu',
+        'container-class'   => 'fresherszone-nav-menu'
+    ]);
+?>
