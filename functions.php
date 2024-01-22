@@ -57,5 +57,39 @@ function setup_theme(){
      * Adding support for post thumbnails
      */
     add_theme_support( 'post-thumbnails' );
+
+    add_theme_support( 'customize-selective-refresh-widgets' );
+
+    add_theme_support( 'automatic-feed-links' );
+
+    add_theme_support( 'html5', 
+        array(
+            'search-form',
+            'comment-form',
+            'comment-list',
+            'gallery',
+            'caption',
+            'script',
+            'style'
+        )  
+    );
+
+    /**
+     * Adding wp block styles.
+     */
+    add_theme_support( 'wp-block-styles' );
+
+    /**
+     * Adding theme support for alignments wide and full width.
+     */
+    add_theme_support( 'align-wide' );
+
+    /**
+     * Adding content area for the theme.
+     */
+    global $content_width;
+    if( ! isset( $content_width ) ){
+        $content_width = 1240;
+    }
 }
 add_action('after_setup_theme', 'setup_theme');
