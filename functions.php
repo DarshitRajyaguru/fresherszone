@@ -18,6 +18,7 @@ function fresherszone_get_theme_instance() {
 fresherszone_get_theme_instance();
 function fz_enqueue_scripts()
 {
+    wp_enqueue_script('jquery');
     wp_enqueue_style('custom-stylesheet', get_template_directory_uri() . '/style.css', array(), '1.0.0', 'all');
     wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/assets/src/library/css/bootstrap.min.css', array(), '1.0.0', 'all');
 
