@@ -31,7 +31,17 @@
             ?>
         </p>
         <?php
-        }
+       } elseif ( is_search() ) {
+				?>
+				<p><?php esc_html_e( 'Sorry but nothing matched your search item. Please try again with some different keywords', 'fresherszone'  ); ?></p>
+				<?php
+				get_search_form();
+			} else {
+				?>
+				<p><?php esc_html_e( 'It seems that we cannot find what you are looking for . Perhaps search can help', 'fresherszone'  ); ?></p>
+				<?php
+				get_search_form();
+			}
         ?>
     </div>
 </section>
