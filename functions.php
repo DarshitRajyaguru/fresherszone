@@ -11,6 +11,7 @@ if(!defined( 'FRESHERSZONE_DIR_URI' )){
     define( 'FRESHERSZONE_DIR_URI', untrailingslashit( get_template_directory_uri() ) );
 }
 require_once FRESHERSZONE_DIR_PATH. '/inc/helpers/autoloader.php';
+require_once FRESHERSZONE_DIR_PATH. '/inc/helpers/template-tags.php';
 
 function fresherszone_get_theme_instance() {
 	// \FRESHERSZONE_THEME\Inc\FRESHERSZONE_THEME::get_instance();
