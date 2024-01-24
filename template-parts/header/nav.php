@@ -8,7 +8,8 @@
  $header_menu_id = get_menu_id('fresherszone-header-menu');
  $header_menus = wp_get_nav_menu_items($header_menu_id);
 ?>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <?php 
 		if( function_exists( 'the_custom_logo' ) ){
@@ -68,3 +69,4 @@
         </div>
     </div>
 </nav>
+</div>

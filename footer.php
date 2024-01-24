@@ -5,15 +5,16 @@
  * @package fresherszone
  */
 ?>
-<footer>Footer</footer>
+<footer>
+  <hr>
+<div class="container">
+  <h3>Footer</h3>
+</div>
+</footer>
 </div>
 </div>
 <?php wp_footer(); ?>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var myNavbar = new bootstrap.Collapse(document.getElementById('navbarSupportedContent'));
-  });
-</script>
+
 
 </body>
 
