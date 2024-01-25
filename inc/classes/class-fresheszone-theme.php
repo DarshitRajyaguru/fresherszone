@@ -57,9 +57,5 @@ class FRESHERSZONE_THEME {
 			'flex-width'	=> true
 		));
 	}
-	/**
-	 * Register image sizes.
-	 */
-	add_image_size( 'featured-thumbnail', 350, 233, true );
 
 	

@@ -125,5 +125,49 @@ function setup_theme(){
 	 * Register image sizes.
 	 */
 	add_image_size( 'featured-thumbnail', 350, true );
+
 }
 add_action('after_setup_theme', 'setup_theme');
+
+/**
+ * Add custom meta box.
+ *
+ * @return void
+ */
+function add_custom_meta_box() {
+    $screens = [ 'post' ];
+    foreach ( $screens as $screen ) {
+        add_meta_box(
+            'hide-page-title',                              // Unique ID
+            __( 'Hide page title', 'fresherszone' ),        // Box title
+            'custom_meta_box_callback_html',     // Content callback, must be of type callable
+            $screen,                                        // Post type
+            'side'                                          // context
+        );
+    }
+}
+
+/**
+ * Custom meta box HTML( for form )
+ *
+ * @param object $post Post.
+ *
+ * @return void
+ */
+function custom_meta_box_callback_html($post){
+    $value = get_post_meta($post->ID, '_hide_page_title', true);
+    ?>
+    <label for="fresherszone-field" class="mb-3"><?php esc_html_e( 'Hide the page title', 'fresherszone' ); ?></label><br>
+    <select name="fresherszone_hide_title_field" id="fresherszone-field" class="form-select form-select-md">
+        <option value=""><?php esc_html_e( 'Select', 'fresherszone' ); ?></option>
+        <option value="yes" <?php selected( $value, 'yes' ); ?>>
+            <?php esc_html_e( 'Yes', 'fresherszone' ); ?>
+        </option>
+        <option value="no" <?php selected( $value, 'no' ); ?>>
+            <?php esc_html_e( 'No', 'fresherszone' ); ?>
+        </option>
+    </select>
+    <?php
+}
+
+add_action( 'add_meta_boxes', 'add_custom_meta_box' );
