@@ -120,5 +120,10 @@ function setup_theme(){
         }
         return $child_menus;
     }
+
+    /**
+	 * Register image sizes.
+	 */
+	add_image_size( 'featured-thumbnail', 350, true );
 }
 add_action('after_setup_theme', 'setup_theme');

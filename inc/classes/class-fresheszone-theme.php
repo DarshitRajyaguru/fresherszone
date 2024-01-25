@@ -15,8 +15,8 @@ class FRESHERSZONE_THEME {
 	protected function __construct() {
 		wp_die('Hello');
 		// Load class.
-		// Assets::get_instance();
-		// Menus::get_instance();
+		Assets::get_instance();
+		Menus::get_instance();
 		// Meta_Boxes::get_instance();
 		// Sidebars::get_instance();
 		// Blocks::get_instance();
@@ -57,5 +57,9 @@ class FRESHERSZONE_THEME {
 			'flex-width'	=> true
 		));
 	}
+	/**
+	 * Register image sizes.
+	 */
+	add_image_size( 'featured-thumbnail', 350, 233, true );
 
 	
