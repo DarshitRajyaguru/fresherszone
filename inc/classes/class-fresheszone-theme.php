@@ -13,7 +13,7 @@ class FRESHERSZONE_THEME {
 	use Singleton;
 
 	protected function __construct() {
-		wp_die('Hello');
+		//wp_die('Hello');
 		// Load class.
 		Assets::get_instance();
 		Menus::get_instance();
