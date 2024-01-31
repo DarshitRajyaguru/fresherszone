@@ -36,7 +36,6 @@ class FRESHERSZONE_THEME {
 		 * Actions.
 		 */
 		add_action( 'after_setup_theme', [ $this, 'setup_theme' ] );
-		add_action('wp_enqueue_scripts', [ $this, 'fz_enqueue_scripts']);
 
 	}
 

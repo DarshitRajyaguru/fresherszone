@@ -69,7 +69,7 @@ function autoloader( $resource = '' ) {
 		}
 
 		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit( FRESHERSZONE_DIR_PATH ), $directory, $file_name );
-
+		echo FRESHERSZONE_DIR_PATH;
 	}
 
 	/**
