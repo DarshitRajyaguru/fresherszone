@@ -169,5 +169,29 @@ function custom_meta_box_callback_html($post){
     </select>
     <?php
 }
-
 add_action( 'add_meta_boxes', 'add_custom_meta_box' );
+
+/**
+ * Save post meta into database
+ * when the post is saved.
+ *
+ * @param integer $post_id Post id.
+ *
+ * @return void
+ */
+function save_post_meta_data( $post_id ) {
+    // Check if the current user is authorized
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+
+    // Check if the 'fresherszone_hide_title_field' key is set in $_POST
+    if ( isset( $_POST['fresherszone_hide_title_field'] ) ) {
+        // Sanitize and validate the data before saving
+        $hide_title_field = sanitize_text_field( $_POST['fresherszone_hide_title_field'] );
+
+        // Update post meta data
+        update_post_meta( $post_id, '_hide_page_title', $hide_title_field );
+    }
+}
+add_action( 'save_post', 'save_post_meta_data' );

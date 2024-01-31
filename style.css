@@ -18,3 +18,7 @@ img {
     width: auto;
     height: auto;
 }
+
+img.attachment-featured-large {
+    border-radius: 10px;
+}
