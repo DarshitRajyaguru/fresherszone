@@ -20,7 +20,7 @@ $hide_title    = get_post_meta( $the_post_id, '_hide_page_title', true );
                             $the_post_id,
                             'featured-thumbnail',
                             [
-                                'sizes' => '(max-width: 350px) 350px, 350px',
+                                'sizes' => '(max-width: 400px) 400px, 400px',
                                 'class' => 'attachment-featured-large size-featured-image'
                             ]
                         );
