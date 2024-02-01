@@ -156,6 +156,10 @@ function add_custom_meta_box() {
  */
 function custom_meta_box_callback_html($post){
     $value = get_post_meta($post->ID, '_hide_page_title', true);
+    /**
+     * Use a nonce for verifycation
+     */
+    wp_nonce_field( plugin_basename(__FILE__), 'hide_title_meta_box_nonce_name' );
     ?>
     <label for="fresherszone-field" class="mb-3"><?php esc_html_e( 'Hide the page title', 'fresherszone' ); ?></label><br>
     <select name="fresherszone_hide_title_field" id="fresherszone-field" class="form-select form-select-md">
@@ -180,8 +184,19 @@ add_action( 'add_meta_boxes', 'add_custom_meta_box' );
  * @return void
  */
 function save_post_meta_data( $post_id ) {
-    // Check if the current user is authorized
+    /**
+     * When the post is saved or updated we get $_POST available
+     * Check if the current user is authorized
+     */
     if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+    /**
+     * verify the nonce value
+     */
+    if ( ! isset( $_POST['hide_title_meta_box_nonce_name'] ) ||
+            ! wp_verify_nonce( $_POST['hide_title_meta_box_nonce_name'], plugin_basename(__FILE__) )
+    ) {
         return;
     }
 
